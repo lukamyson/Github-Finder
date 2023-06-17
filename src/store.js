@@ -33,7 +33,7 @@ const store = createStore({
   async getUserInfo({commit},payload){
      try {
        const res =  await axios.get(`https://api.github.com/users/${payload}`)
-       const res2 =  await axios.get(`s`)
+       const res2 =  await axios.get(`https://api.github.com/users/${payload}/repos`)
       let userData = res.data
       let repos = res2.data
       commit('getUserInfo',userData)
